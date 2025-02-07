@@ -98,5 +98,15 @@ namespace RepositoryPattern.Controllers
             }
             return View();
         }
+
+        public async Task<ActionResult<Student>> Details (int? id)
+        {
+            var response = await _studentRepository.DetailsStudent(id);
+            if(response == null)
+            {
+                return NotFound();
+            }
+            return View(response);
+        }
     }
 }

@@ -138,5 +138,19 @@ namespace RepositoryPattern.Services
             response.Message = "Student Deleted Successfully!";
             return response;
         }
+
+        public async Task<Student> DetailsStudent(int? id)
+        {
+            if(id  is null || _db.Student is null)
+            {
+                return null;
+            }
+            var studentData = await _db.Student.FindAsync(id);
+            if(studentData is null)
+            {
+                return null;
+            }
+            return studentData;
+        }
     }
 }

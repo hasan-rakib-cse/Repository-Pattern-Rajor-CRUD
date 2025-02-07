@@ -12,5 +12,6 @@ namespace RepositoryPattern.IRepositories
         Task<Student> EditStudent(int? id);
         Task<VmResponseMessage> DeleteConfirmed(int? id);
         Task<Student> DeleteStudent(int? id);
+        Task<Student> DetailsStudent(int? id);
     }
 }
